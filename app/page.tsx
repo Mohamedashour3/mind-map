@@ -27,7 +27,7 @@ export default function Home() {
           <div className="flex items-center">
             <Link
               href="/"
-              className="flex items-center gap-2 transition-all duration-300"
+              className="flex items-center gap-2 transition-all duration-300 group"
             >
               <div className="relative">
                 <Image
@@ -35,10 +35,12 @@ export default function Home() {
                   alt="Mind Map Logo"
                   width={40}
                   height={40}
-                  className="transition-transform duration-500 hover:rotate-180"
+                  className="transition-transform duration-500 group-hover:rotate-180"
                 />
               </div>
-              <span className="text-xl font-bold text-primary">Mind Map</span>
+              <span className="text-xl font-bold text-primary overflow-hidden w-0 group-hover:w-24 transition-all duration-500 whitespace-nowrap">
+                Mind Map
+              </span>
             </Link>
             <nav className="hidden md:flex items-center ml-6">
               <Link

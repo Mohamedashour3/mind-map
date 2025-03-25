@@ -1,11 +1,11 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowLeft, Globe } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowLeft, Globe } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { AppStoreButton } from "@/components/app-store-button"
-import { PlayStoreButton } from "@/components/play-store-button"
-import { MobileMenu } from "@/components/mobile-menu"
+import { Button } from "@/components/ui/button";
+import { AppStoreButton } from "@/components/app-store-button";
+import { PlayStoreButton } from "@/components/play-store-button";
+import { MobileMenu } from "@/components/mobile-menu";
 
 export default function AboutPage() {
   return (
@@ -14,26 +14,41 @@ export default function AboutPage() {
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2 transition-all duration-300">
+            <Link
+              href="/"
+              className="flex items-center gap-2 transition-all duration-300 group"
+            >
               <div className="relative">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2024-12-17_143250-removebg-preview%201-1PnN9EJk5Dqwe16JomiVOijih1cdJq.png"
                   alt="Mind Map Logo"
                   width={40}
                   height={40}
-                  className="transition-transform duration-500 hover:rotate-180"
+                  className="transition-transform duration-500 group-hover:rotate-180"
                 />
               </div>
-              <span className="text-xl font-bold text-primary">Mind Map</span>
+              <span className="text-xl font-bold text-primary overflow-hidden w-0 group-hover:w-24 transition-all duration-500 whitespace-nowrap">
+                Mind Map
+              </span>
             </Link>
             <nav className="hidden md:flex items-center ml-6">
-              <Link href="/features" className="text-sm font-medium hover:text-primary px-3 py-2">
+              <Link
+                href="/features"
+                className="text-sm font-medium hover:text-primary px-3 py-2"
+              >
                 Features
               </Link>
-              <Link href="/about" className="text-sm font-medium text-primary px-3 py-2">
+              <Link
+                href="/about"
+                className="text-sm font-medium text-primary px-3 py-2"
+              >
                 About
               </Link>
-              <Button variant="ghost" size="icon" className="text-sm font-medium">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-sm font-medium"
+              >
                 <Globe className="h-5 w-5" />
                 <span className="sr-only">Toggle Language</span>
               </Button>
@@ -53,7 +68,10 @@ export default function AboutPage() {
       <main className="flex-1">
         <section className="container py-12 md:py-24 lg:py-32">
           <div className="flex flex-col items-center text-center space-y-4 mb-12">
-            <Link href="/" className="inline-flex items-center gap-2 text-primary hover:underline mb-4">
+            <Link
+              href="/"
+              className="inline-flex items-center gap-2 text-primary hover:underline mb-4"
+            >
               <ArrowLeft className="h-4 w-4" />
               Back to Home
             </Link>
@@ -68,7 +86,9 @@ export default function AboutPage() {
                 />
               </div>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">About Mind Map</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tighter">
+              About Mind Map
+            </h1>
             <p className="max-w-[700px] text-muted-foreground md:text-xl">
               Our story, mission, and vision for mental health support
             </p>
@@ -78,58 +98,79 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold">Our Story</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Mind Map was founded in 2023 by a team of mental health professionals, technologists, and individuals
-                with lived experience of mental health challenges. We recognized the need for accessible, personalized
-                mental health support that could reach people wherever they are.
+                Mind Map was founded in 2023 by a team of mental health
+                professionals, technologists, and individuals with lived
+                experience of mental health challenges. We recognized the need
+                for accessible, personalized mental health support that could
+                reach people wherever they are.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our journey began with a simple question: How can we use technology to make mental health support more
-                accessible and effective? The answer was to create a comprehensive platform that combines scientific
-                assessments, AI-powered insights, and daily tracking to help people understand and improve their mental
-                well-being.
+                Our journey began with a simple question: How can we use
+                technology to make mental health support more accessible and
+                effective? The answer was to create a comprehensive platform
+                that combines scientific assessments, AI-powered insights, and
+                daily tracking to help people understand and improve their
+                mental well-being.
               </p>
             </div>
 
             <div className="space-y-4">
               <h2 className="text-2xl font-bold">Our Mission</h2>
               <p className="text-muted-foreground leading-relaxed">
-                At Mind Map, our mission is to democratize access to mental health support and empower individuals to
-                take control of their mental well-being. We believe that everyone deserves to understand their mind
-                better and have the tools to improve their mental health.
+                At Mind Map, our mission is to democratize access to mental
+                health support and empower individuals to take control of their
+                mental well-being. We believe that everyone deserves to
+                understand their mind better and have the tools to improve their
+                mental health.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                We&apos;re committed to breaking down barriers to mental health support by providing a platform that is
-                accessible, affordable, and effective. Our app combines the latest research in psychology with
-                cutting-edge technology to deliver personalized insights and support.
+                We&apos;re committed to breaking down barriers to mental health
+                support by providing a platform that is accessible, affordable,
+                and effective. Our app combines the latest research in
+                psychology with cutting-edge technology to deliver personalized
+                insights and support.
               </p>
             </div>
 
             <div className="space-y-4">
               <h2 className="text-2xl font-bold">Our Approach</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Mind Map takes a holistic approach to mental health, recognizing that each person&apos;s experience is
-                unique. Our platform offers:
+                Mind Map takes a holistic approach to mental health, recognizing
+                that each person&apos;s experience is unique. Our platform offers:
               </p>
               <ul className="list-disc list-inside space-y-2 text-muted-foreground leading-relaxed">
                 <li>
-                  <span className="font-medium text-foreground">Comprehensive Assessments:</span> Scientifically
-                  validated tests to identify personality types and potential mental health conditions
+                  <span className="font-medium text-foreground">
+                    Comprehensive Assessments:
+                  </span>{" "}
+                  Scientifically validated tests to identify personality types
+                  and potential mental health conditions
                 </li>
                 <li>
-                  <span className="font-medium text-foreground">Daily Tracking:</span> Tools to monitor mood, symptoms,
-                  and triggers over time
+                  <span className="font-medium text-foreground">
+                    Daily Tracking:
+                  </span>{" "}
+                  Tools to monitor mood, symptoms, and triggers over time
                 </li>
                 <li>
-                  <span className="font-medium text-foreground">AI-Powered Insights:</span> Personalized recommendations
-                  based on your unique profile and patterns
+                  <span className="font-medium text-foreground">
+                    AI-Powered Insights:
+                  </span>{" "}
+                  Personalized recommendations based on your unique profile and
+                  patterns
                 </li>
                 <li>
-                  <span className="font-medium text-foreground">Educational Resources:</span> Information about mental
-                  health conditions, coping strategies, and treatment options
+                  <span className="font-medium text-foreground">
+                    Educational Resources:
+                  </span>{" "}
+                  Information about mental health conditions, coping strategies,
+                  and treatment options
                 </li>
                 <li>
-                  <span className="font-medium text-foreground">Supportive Community:</span> Connection with others who
-                  share similar experiences
+                  <span className="font-medium text-foreground">
+                    Supportive Community:
+                  </span>{" "}
+                  Connection with others who share similar experiences
                 </li>
               </ul>
             </div>
@@ -137,14 +178,16 @@ export default function AboutPage() {
             <div className="space-y-4">
               <h2 className="text-2xl font-bold">Our Team</h2>
               <p className="text-muted-foreground leading-relaxed">
-                Mind Map is built by a diverse team of experts in psychology, psychiatry, software development, data
-                science, and user experience design. We&apos;re united by our passion for mental health and our belief in the
-                power of technology to transform lives.
+                Mind Map is built by a diverse team of experts in psychology,
+                psychiatry, software development, data science, and user
+                experience design. We&apos;re united by our passion for mental health
+                and our belief in the power of technology to transform lives.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Our clinical advisors ensure that all content and features are grounded in evidence-based practices,
-                while our lived experience advisors help us create a platform that truly meets the needs of those
-                navigating mental health challenges.
+                Our clinical advisors ensure that all content and features are
+                grounded in evidence-based practices, while our lived experience
+                advisors help us create a platform that truly meets the needs of
+                those navigating mental health challenges.
               </p>
             </div>
           </div>
@@ -155,7 +198,10 @@ export default function AboutPage() {
       <footer className="border-t py-8 md:py-12">
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2 transition-transform hover:scale-105">
+            <Link
+              href="/"
+              className="flex items-center gap-2 transition-transform hover:scale-105"
+            >
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2024-12-17_143250-removebg-preview%201-1PnN9EJk5Dqwe16JomiVOijih1cdJq.png"
                 alt="Mind Map Logo"
@@ -166,20 +212,30 @@ export default function AboutPage() {
             </Link>
           </div>
           <div className="flex flex-col md:flex-row items-center gap-6 md:gap-8">
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
+            <Link
+              href="#"
+              className="text-sm text-muted-foreground hover:text-foreground"
+            >
               Contact Us
             </Link>
           </div>
-          <div className="text-sm text-muted-foreground">© 2025 Mind Map. All rights reserved.</div>
+          <div className="text-sm text-muted-foreground">
+            © 2025 Mind Map. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

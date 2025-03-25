@@ -1,29 +1,29 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import Image from "next/image"
-import { Globe, Menu, X } from "lucide-react"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { Globe, Menu, X } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { AppStoreButton } from "@/components/app-store-button"
-import { PlayStoreButton } from "@/components/play-store-button"
+import { Button } from "@/components/ui/button";
+import { AppStoreButton } from "@/components/app-store-button";
+import { PlayStoreButton } from "@/components/play-store-button";
 
 export function MobileMenu() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   // Prevent scrolling when menu is open
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto"
+      document.body.style.overflow = "auto";
     }
 
     return () => {
-      document.body.style.overflow = "auto"
-    }
-  }, [isOpen])
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen]);
 
   return (
     <div className="md:hidden">
@@ -34,12 +34,20 @@ export function MobileMenu() {
 
       {isOpen && (
         <>
-          {/* Overlay that covers everything */}
+          {/* Overlay that covers everything with explicit white background */}
           <div
             className="fixed inset-0 z-[9999] bg-white"
-            style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "white" }}
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "white",
+              zIndex: 9999,
+            }}
           >
-            <div className="border-b p-4 flex items-center justify-between">
+            <div className="border-b p-4 flex items-center justify-between bg-white">
               <div className="flex items-center gap-2">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_2024-12-17_143250-removebg-preview%201-1PnN9EJk5Dqwe16JomiVOijih1cdJq.png"
@@ -49,13 +57,17 @@ export function MobileMenu() {
                 />
                 <span className="text-xl font-bold text-primary">Mind Map</span>
               </div>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsOpen(false)}
+              >
                 <X className="h-5 w-5" />
                 <span className="sr-only">Close menu</span>
               </Button>
             </div>
 
-            <div className="p-6 flex flex-col gap-8">
+            <div className="p-6 flex flex-col gap-8 bg-white">
               <nav className="flex flex-col gap-6">
                 <Link
                   href="/features"
@@ -71,7 +83,11 @@ export function MobileMenu() {
                 >
                   About
                 </Link>
-                <Button variant="ghost" size="lg" className="justify-start p-0 h-auto text-2xl font-medium">
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="justify-start p-0 h-auto text-2xl font-medium"
+                >
                   <Globe className="h-6 w-6 mr-3" />
                   <span>Change Language</span>
                 </Button>
@@ -90,6 +106,5 @@ export function MobileMenu() {
         </>
       )}
     </div>
-  )
+  );
 }
-
